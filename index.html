@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Joe's Bespoke Bots</title>
+  <style type="text/css">
+    img {
+      float: left;
+      max-width: 400px;
+      padding: 2rem;
+    }
+    div {
+      float: left;
+      max-width: 600px;
+      font-family: monospace;
+      font-size: 14px;
+      line-height: 1.2rem;
+      padding: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <img src="./assets/jbbcrop.png" title="Joe's Bespoke Bots"/>
+  <div>
+    <h1>Joe's Bespoke Bots</h1>
+<h2>sportsscore</h2>
+<p>This is a framework that I've built for easy deployments of linear regression models to a corpus of tweets. Regardless of the decision that needs to be made, this framework will regularly check any number of defined twitter accounts, run them against a model, and decide whether or not to retweet them to the bot. The querying process is designed to allow multiple bots to run on the same framework at the same time, and for new bots to be added easily — provided they follow the formula of making a decision on tweets from one or more accounts in order to retweet them. You can find concrete examples of this machine learning framework applied below in the bot list.</p>
+
+<p>There's also some small user tools like a page to show off the applied algorithm and the ability to manually validate new tweets to go back into the corpus.</p>
+
+<p>Here's a big list of some of the technology involved:</p>
+
+<p>Python, flask, SQLite3, SQLAlchemy, Tweepy, scikit-learn, jinja, gunicorn, Vue, nginx, Ubuntu, git</p>
+
+<h2>vcuscoresbot</h2>
+
+<p><a href="https://twitter.com/vcuscoresbot">https://twitter.com/vcuscoresbot</a></p>
+
+<p>Virginia Commonwealth University used to run a Twitter account, @VCUScores. Here, the varying athletics programs would tweet out scores for sporting events as they happened. I really loved this service — I had my twitter account set to follow and give me notifications every time the account tweeted, which I also forwarded to my smart watch. So, because of this account, I felt incredibly tied in to my alma mater, and even if I didn't decide to watch every individual men's soccer match, I found a lot of value in always knowing about each individual program's successes and failures.</p>
+
+<p>Since they decided to shutter this account in order to focus on other offerings, I saw this as an interesting problem to solve. The account runners were right in that this account was effectively a duplicate of the work that was going into the Twitter accounts for each athletics program — for example, VCU's field hockey team's Twitter account would tweet out about games they were actively playing at the same time as @VCUScores. In order to make sure this information could still be collated in one single place, I created a new bot which takes the feeds from each individual sport, runs it against a linear regression model to determine whether or not the tweet contains the score of an active sporting event, and then, if it does, simply retweet it.</p>
+
+<h2>fplscores</h2>
+
+<p><a href="https://twitter.com/fplscores">https://twitter.com/fplscores</a></p>
+
+<p>I am a big fan of the Premier League, England's top-tier for that sport with the ball you kick with your feet. I also play Fantasy Premier League and spend quite a bit of time on it — I compete with friends and family and end up watching even more matches just because I want to know how certain players are doing!</p>
+
+<p>I have been following the @OfficialFPL Twitter account for a while, having set the account to give me push notifications every time a new tweet is posted. However, this account gives you quite a bit of information, which can be roughly categorized into groups like:</p>
+
+<p><ul>
+<li>Tweets describing the way that your FPL score will change</li>
+<li>Tweets about the status of any individual player</li>
+<li>General statistics about Fantasy Premier League itself (e.g. 1 million people selected this player, but he didn't get named to the bench!)</li>
+<li>Advice about how to pick your team</li>
+<li>Other banter</li>
+</ul></p>
+
+<p>Needless to say, a lot of these tweets then show up as notifications on my phone when I'm really not that interested. So my bot runs a simple linear regression against this account to only select the tweets which describe events that will change the score of the fantasy game, like who scored, who has been cautioned with a yellow card, the status of bonus points for each match.</p>
+  </div>
+</body>
+</html>
